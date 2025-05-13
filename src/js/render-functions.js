@@ -19,7 +19,7 @@ export function createGallery(images) {
           </a>
         </li>`
   ).join("");
-  galleryEl.innerHTML = markup;
+  galleryEl.insertAdjacentHTML('beforeend', markup);
   simpleLightbox.refresh();
 }
 
@@ -27,11 +27,19 @@ export function clearGallery() {
   galleryEl.innerHTML = "";
 }
 
-export function showLoader(element) {
+export function showElement(element) {
   element.classList.remove('hidden');
 }
 
-export function hideLoader(element) {
+export function hideElement(element) {
   element.classList.add('hidden');
 }
+
+// export function showLoadMoreButton(element) {
+//   element.classList.remove('hidden');
+// }
+
+// export function hideLoadMoreButton(element) {
+//   element.classList.add('hidden');
+// }
 

@@ -102,33 +102,46 @@ button {
   color: #fff;
 }
 
+.load-more-btn {
+  width: 125px;
+  margin: 32px auto;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+}
+
 button:hover {
   background-color: #6c8cff;
 }
 
+
 /********** LOADER ***********/
+
 .loader {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   display: block;
-  position: relative;
-  border: 2px solid #FF3D00;
+  border-top: 4px solid #0f0f0f;
+  border-right: 4px solid transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-  margin: 0 auto;
+  margin: 5px auto;
 }
 
 .loader::after {
   content: '';
   box-sizing: border-box;
   position: absolute;
-  left: 4px;
-  top: 4px;
-  border: 2px solid lightslategrey;
-  width: 12px;
-  height: 12px;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  border-left: 4px solid #FF3D00;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
 }
 
 @keyframes rotation {
@@ -140,6 +153,30 @@ button:hover {
     transform: rotate(360deg);
   }
 }
+
+
+.loader-more {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: block;
+  margin: 3px auto;
+  border-top: 3px solid darkred;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 /*********** HIDDEN CLASS ***********/
 .hidden {
